@@ -1,0 +1,18 @@
+{
+  "manifest_version": 2,
+
+  "name": "github to jira",
+  "description": "This extension automatically links JIRA stories in Github",
+  "version": "1.18",
+
+  "permissions": [
+    "https://github.com/"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://github.com/*"],
+      "js": ["github2jira.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
