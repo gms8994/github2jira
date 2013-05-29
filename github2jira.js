@@ -12,7 +12,7 @@ for (var i = 0; i < nodes.length; i++) {
 	var node = nodes[i];
 
 	var orig_content = content = node.textContent;
-	var found = content.match(/\b#?(\w+?-\d+)\b/g);
+	var found = content.match(/\b#?([A-Za-z][A-Za-z0-9]+?-\d+(?!-))\b/g);
 
 	var match_text;
 	if (found) {

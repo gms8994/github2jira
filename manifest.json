@@ -3,7 +3,7 @@
 
   "name": "github to jira",
   "description": "This extension automatically links JIRA stories in Github",
-  "version": "1.25",
+  "version": "1.29",
 
   "permissions": [
     "https://github.com/"
