@@ -1,12 +1,14 @@
 var titles = document.querySelectorAll('.discussion-topic-title');
 var messages = document.querySelectorAll('.message');
 var comments = document.querySelectorAll('div.comment-content div div p');
+var pullrequests = document.querySelectorAll('h4 a[href*="/pull/"]');
 
 titles = Array.prototype.slice.call(titles);
 messages = Array.prototype.slice.call(messages);
 comments = Array.prototype.slice.call(comments);
+pullrequests = Array.prototype.slice.call(pullrequests);
 
-var nodes = comments.concat(titles.concat(messages));
+var nodes = pullrequests.concat(comments.concat(titles.concat(messages)));
 
 for (var i = 0; i < nodes.length; i++) {
 	var node = nodes[i];
