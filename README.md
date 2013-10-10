@@ -15,4 +15,3 @@ Updating
 - Visit `chrome://extensions`. Make sure `Developer mode` is checked in the upper right hand corner.
 - Click `Reload` next to the `github to jira` extension.
 - Profit!
-- TEST
