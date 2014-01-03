@@ -1,16 +1,4 @@
-var titles = document.querySelectorAll('.discussion-topic-title');
-var messages = document.querySelectorAll('.message');
-var comments = document.querySelectorAll('div.comment-content div div p');
-var pullrequests = document.querySelectorAll('h4 a[href*="/pull/"]');
-var releases = document.querySelectorAll('.release-body li');
-
-titles = Array.prototype.slice.call(titles);
-messages = Array.prototype.slice.call(messages);
-comments = Array.prototype.slice.call(comments);
-pullrequests = Array.prototype.slice.call(pullrequests);
-releases = Array.prototype.slice.call(releases);
-
-var nodes = releases.concat(pullrequests.concat(comments.concat(titles.concat(messages))));
+var nodes = merge('.discussion-topic-title', '.message', 'div.comment-content div div p', 'h4 a[href*="/pull/"]', '.release-body li');
 
 for (var i = 0; i < nodes.length; i++) {
 	var node = nodes[i];
@@ -37,4 +25,15 @@ for (var i = 0; i < nodes.length; i++) {
 
 function escapeRegExp(str) {
   return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+}
+
+function merge() {
+	var allNodes = [];
+	Array.prototype.slice.call(arguments).forEach(function(selector) {
+		var nodes = Array.prototype.slice.call(document.querySelectorAll(selector));
+
+		allNodes = allNodes.concat(nodes);
+	});
+
+	return allNodes;
 }
